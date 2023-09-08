@@ -10,6 +10,6 @@ def test_stat():
     # Create the pandas DataFrame with column name is provided explicitly
     df = pd.DataFrame(data, columns=['Numbers'])
     
-    assert df.describe == descriptive_stat(df)
+    assert df.describe == descriptive_stats(df)
 
 test_stat()
