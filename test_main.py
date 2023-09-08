@@ -1,7 +1,7 @@
 """Test file to verify main function"""
 
 import pandas as pd
-from main import descriptive_stat
+from main import descriptive_stats
 
 def test_stat():
     # initialize list elements
