@@ -10,10 +10,10 @@ def test_stat():
     height = [5, 5.5, 6, 5]
       
     # Create the pandas DataFrame
-   pd.DataFrame(list(zip(name, age, height)),
+    pd.DataFrame(list(zip(name, age, height)),
                columns =['Name', 'Age', 'Height']
     
-    assert df['Age'].mean() == descriptive_stats(df,2)
-    assert df['Height'].mean() == descriptive_stats(df)
+    assert df.loc[:, 'Age'].mean() == descriptive_stats(df,2)
+    assert df.loc[:, 'Height'].mean() == descriptive_stats(df)
 
 test_stat()
