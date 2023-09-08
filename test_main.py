@@ -11,7 +11,7 @@ def test_stat():
       
     # Create the pandas DataFrame
     pd.DataFrame(list(zip(name, age, height)),
-               columns =['Name', 'Age', 'Height']
+               columns =['Name', 'Age', 'Height'])
     
     assert df.loc[:, 'Age'].mean() == descriptive_stats(df,2)
     assert df.loc[:, 'Height'].mean() == descriptive_stats(df)
