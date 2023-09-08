@@ -5,11 +5,15 @@ from main import descriptive_stats
 
 def test_stat():
     # initialize list elements
-    data = [10,20,30,40,50,60]
+    name = ["A", "B", "C", "D"]
+    age = [10,20,30,40]
+    height = [5, 5.5, 6, 5]
       
-    # Create the pandas DataFrame with column name is provided explicitly
-    df = pd.DataFrame(data, columns=['Numbers'])
+    # Create the pandas DataFrame
+   pd.DataFrame(list(zip(name, age, height)),
+               columns =['Name', 'Age', 'Height']
     
-    assert df.describe == descriptive_stats(df)
+    assert df['Age'].mean() == descriptive_stats(df,2)
+    assert df['Height'].mean() == descriptive_stats(df)
 
 test_stat()
