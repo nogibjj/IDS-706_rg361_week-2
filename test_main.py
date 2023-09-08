@@ -3,7 +3,7 @@
 import pandas as pd
 from main import descriptive_stat
 
-def test_stat()
+def test_stat():
     # initialize list elements
     data = [10,20,30,40,50,60]
       
