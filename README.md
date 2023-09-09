@@ -36,7 +36,8 @@ The ``descriptive_stats`` function in ``main.py`` returns the mean of the select
 ### 6. Python files
    - ``main.py`` : contains the ``descriptive_stats`` function which returns the mean of the selected column in the DataFrame
    - ``test_main`` : a test file to verify the main.py file which contains a sample DataFrame and the expected results when testing with the  descriptive_stats function
-     Sample execution of test file:
+
+      Sample execution of test file:
 ![test_output](https://github.com/nogibjj/IDS-706_rg361_week-2/blob/b3ef720f0fd41803c4306ef34420e419f4d58d99/resources/test_output_week2.png)
 
    - ``example.py`` & ``test_example.py``: these files are a part of the original [Data Engineering Python Template](https://github.com/revanth7667/Duke_IDS_706-DE) repository. They have been left in this repository for testing the github actions and other features if required. These files can be safely delted from the repository if required and it will not have any impact on the functioning of the repository.
