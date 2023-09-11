@@ -18,7 +18,7 @@ def descriptive_stats(fname, col=None):
     plt.hist(df[col_name])  # .plot()
     plt.ylabel("Count of " + col_name)
     plt.xlabel(col_name)
-    plt.title("Data Laoded from : " + fname)
+    plt.title("Data Loaded from : " + fname)
     plt.show()
     plt.savefig("./resources/output.png")
     plt.clf()
