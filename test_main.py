@@ -3,16 +3,29 @@
 import pandas as pd
 from main import descriptive_stats
 
+
 def test_stat():
     # initialize list elements
-    name = ["A", "B", "C", "D"]
-    age = [10,20,30,40]
-    height = [5, 5.5, 6, 5]
-      
+
+    fname = "./resources/blood_pressure.csv"
     # Create the pandas DataFrame
-    df = pd.DataFrame(list(zip(name, age, height)), columns =['Name', 'Age', 'Height'])
-    
-    assert df.loc[:, 'Age'].mean() == descriptive_stats(df,2)
-    assert df.loc[:, 'Height'].mean() == descriptive_stats(df)
+    df = pd.read_csv(fname)
+
+    # Test case 1: col number specified
+    col = 3
+    assert [
+        df.iloc[:, col].mean(),
+        df.iloc[:, col].median(),
+        df.iloc[:, col].std(),
+    ] == descriptive_stats(fname, 4)
+
+    # Test case 2: col number not specified, shoudl use last column
+    col = 4
+    assert [
+        df.iloc[:, col].mean(),
+        df.iloc[:, col].median(),
+        df.iloc[:, col].std(),
+    ] == descriptive_stats(fname)
+
 
 test_stat()
