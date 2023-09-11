@@ -9,11 +9,14 @@ This repo has been created using the base [Data Engineering Python Template](htt
 Date Created: 2023-09-08
 
 ## Instructions
-The ``descriptive_stats`` function in ``main.py`` returns a list which contains the the [mean, median, standard deviation] of the selected column in the data, it takes in the following 2 parameters:
+The ``descriptive_stats`` function in ``main.py`` returns a list which contains the the [mean, median, standard deviation] of the selected column in the data. The code stores the histogram as an image in the ``resources`` folder as ``output.png``.
+
+The function takes in the following 2 parameters:
    - fname (**required**) -  file location or path which contains the data
    - col (**optional**) - column number for which the statistics needs to be calculated and histogram plotted. if no input is given, the last column in the data is considered for analysis
 
    **Note** - Count the column numbers starting at 1
+   
    **Note** : The code assumes that the data has a header row, which is the default behaviour of the ``read_csv`` function from pandas which is used to read the data and create a Dataframe 
 
    
