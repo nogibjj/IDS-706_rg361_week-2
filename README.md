@@ -52,6 +52,7 @@ The function takes in the following 2 parameters:
    2. We do not specify a column number (in this test, no argument is passed to the funtion)
    The code runs as expected and the graph is saved in the resources folder as ``output.png``
       Sample execution of test file:
+![test execution](https://github.com/nogibjj/IDS-706_rg361_week-2/blob/3eb40d17417e8b343c0133dfb9374cb5891d1918/resources/test%20output_week2.png)
 ![test_output](https://github.com/nogibjj/IDS-706_rg361_week-2/blob/b42dfb7ef0450dc0a6b1bcb5cb07fb771497ac29/resources/output.png)
 
 **Note** : Only the last graph 'bp_after' is stored since the test file calls the funtion twice and the function clears the previous output before saving a new one
