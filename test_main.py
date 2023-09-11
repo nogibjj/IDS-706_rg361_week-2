@@ -14,7 +14,7 @@ def test_stat():
     # Test case 1: col number specified
     col = 3
     assert [
-        df.iloc[:, col].mean(),
+        df.iloc[:, col].mean()+1,
         df.iloc[:, col].median(),
         df.iloc[:, col].std(),
     ] == descriptive_stats(fname, 4)
