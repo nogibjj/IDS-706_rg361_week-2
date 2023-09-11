@@ -1,18 +1,22 @@
 # Pandas Descriptive Statistics Script [![CI](https://github.com/nogibjj/IDS-706_rg361_week-2/actions/workflows/github_actions.yml/badge.svg)](https://github.com/nogibjj/IDS-706_rg361_week-2/actions/workflows/github_actions.yml)
 
-This repo contains the project file which returns a descriptive statistic (mean) of the selcted column in a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html).
+This repo contains the project file which returns descriptive statistics (mean, median and standard deviation) along with a histogram of the selcted column in a csv file. 
+
+The code reads the data from the csv and stores it as a [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) for the analysis.
 
 This repo has been created using the base [Data Engineering Python Template](https://github.com/revanth7667/Duke_IDS_706-DE) created as week-1 mini-project.
 
 Date Created: 2023-09-08
 
 ## Instructions
-The ``descriptive_stats`` function in ``main.py`` returns the mean of the selected column in a DataFrame, it takes in the following 2 parameters:
-   - df (**required**) -  a pandas DataFrame object
-   - col (**optional**) - column number for which the mean needs to be calculated. if no input is given, the mean of the last column in the DataFrame is returned
+The ``descriptive_stats`` function in ``main.py`` returns a list which contains the the [mean, median, standard deviation] of the selected column in the data, it takes in the following 2 parameters:
+   - fname (**required**) -  file location or path which contains the data
+   - col (**optional**) - column number for which the statistics needs to be calculated and histogram plotted. if no input is given, the last column in the data is considered for analysis
 
-   **Note** - Count the column numbers starting at 1 and do not consider the index of the DataFrame as a column while counting.
+   **Note** - Count the column numbers starting at 1
+   **Note** : The code assumes that the data has a header row, which is the default behaviour of the ``read_csv`` function from pandas which is used to read the data and create a Dataframe 
 
+   
 ## Contents
 ### 1. README.md
    contains the information about the repository and instructions for using it
@@ -30,14 +34,21 @@ The ``descriptive_stats`` function in ``main.py`` returns the mean of the select
    ![Success Build](https://github.com/nogibjj/IDS-706_rg361_week-2/blob/b3ef720f0fd41803c4306ef34420e419f4d58d99/resources/success_build_week2.png)
    
 ### 4. Makefile
-   contains the instructions for the processes used in github actions and .devcontainer
+   contains the instructions for the processes used in github actions and .devcontainer for creating the virtual environment
 ### 5. .devcontainer
    contains the ``dockerfile`` and ``devcontainer.json`` files which are used to build and define the setting of the virtual environment (codespaces - python) for running the code.
 ### 6. Python files
    - ``main.py`` : contains the ``descriptive_stats`` function which returns the mean of the selected column in the DataFrame
    - ``test_main`` : a test file to verify the main.py file which contains a sample DataFrame and the expected results when testing with the  descriptive_stats function
 
-      Sample execution of test file:
-![test_output](https://github.com/nogibjj/IDS-706_rg361_week-2/blob/b3ef720f0fd41803c4306ef34420e419f4d58d99/resources/test_output_week2.png)
+## Sample Outputs
+   a sample Dataset of [blood-pressure from Github](https://github.com/Opensourcefordatascience/Data-sets/blob/master/blood_pressure.csv) has been loaded into the resources folder and is used for testing the code.
 
-   - ``example.py`` & ``test_example.py``: these files are a part of the original [Data Engineering Python Template](https://github.com/revanth7667/Duke_IDS_706-DE) repository. They have been left in this repository for testing the github actions and other features if required. These files can be safely delted from the repository if required and it will not have any impact on the functioning of the repository.
+   Two test cases are run to check the proper functioning of the code:
+   1. We specify the column number (in this test, column 4 is passed as argument to the function)
+   2. We do not specify a column number (in this test, no argument is passed to the funtion)
+   The code runs as expected and the graph is saved in the resources folder as ``output.png``
+      Sample execution of test file:
+![test_output](https://github.com/nogibjj/IDS-706_rg361_week-2/blob/b42dfb7ef0450dc0a6b1bcb5cb07fb771497ac29/resources/output.png)
+
+**Note** : Only the last graph 'bp_after' is stored since the test file calls the funtion twice and the function clears the previous output before saving a new one
