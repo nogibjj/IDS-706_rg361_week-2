@@ -17,7 +17,7 @@ Create a Codespace on main which will initialize the enviroment with the require
 
 The ``descriptive_stats`` function in ``main.py`` returns a list which contains the the [mean, median, standard deviation] of the selected column in the data. 
 
-The code also writes these results to a ``summary.md`` file in the resources folder for future reference
+The code also writes these results to a ``summary.md`` file in the ``resources`` folder for future reference
 
 The code stores the histogram as an image in the ``resources`` folder as ``output.png``
 
@@ -62,8 +62,8 @@ The function takes in the following 2 parameters:
    Two test cases are run to check the proper functioning of the code:
    1. We specify the column number (in this test, column 4 is passed as argument to the function)
    2. We do not specify a column number (in this test, no argument is passed to the funtion)
-   The code runs as expected and the graph and summary are saved in the resources folder as ``output.png``
-      Sample execution of test file:
+
+   The code runs as expected and the graph and summary are saved in the resources folder:
 ![test execution](https://github.com/nogibjj/IDS-706_rg361_week-2/blob/3eb40d17417e8b343c0133dfb9374cb5891d1918/resources/test%20output_week2.png)
 ![test_output](https://github.com/nogibjj/IDS-706_rg361_week-2/blob/b42dfb7ef0450dc0a6b1bcb5cb07fb771497ac29/resources/output.png)
 ![summary output](https://github.com/nogibjj/IDS-706_rg361_week-2/blob/7cc26b046fac3d1dae1cad0a347f0083e2ab97eb/resources/summary_sample.png)
