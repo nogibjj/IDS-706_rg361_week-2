@@ -1,7 +1,6 @@
 """ Function to return the descriptive statistics of a Pandas Dataframe"""
 import pandas as pd
 
-# %%
 import matplotlib.pyplot as plt
 
 
@@ -15,12 +14,18 @@ def descriptive_stats(fname, col=None):
 
     col_name = df.columns[col]
 
-    plt.hist(df[col_name])  # .plot()
+    # create Histogram and save as output.png in output folder
+    plt.hist(df[col_name])
     plt.ylabel("Count of " + col_name)
     plt.xlabel(col_name)
     plt.title("Data Loaded from : " + fname)
-    plt.show()
-    plt.savefig("./resources/output.png")
+    plt.savefig("./resources/output.png")  # change the filepath here in case reequired
     plt.clf()
+
+    # Write the summary statistics to a summary.md in output folder
+    with open("./resources/summary.md", "w", encoding="utf-8") as f:
+        f.write("Mean: " + str(df.iloc[:, col].mean()) + "\n")
+        f.write("Median: " + str(df.iloc[:, col].median()) + "\n")
+        f.write("Standard Deviation: " + str(df.iloc[:, col].std()))
 
     return [df.iloc[:, col].mean(), df.iloc[:, col].median(), df.iloc[:, col].std()]
