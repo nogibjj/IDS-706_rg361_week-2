@@ -25,7 +25,9 @@ def descriptive_stats(fname, col=None):
     # Write the summary statistics to a summary.md in output folder
     with open("./resources/summary.md", "w", encoding="utf-8") as f:
         f.write("Mean: " + str(df.iloc[:, col].mean()) + "\n")
+        f.write("\n")
         f.write("Median: " + str(df.iloc[:, col].median()) + "\n")
+        f.write("\n")
         f.write("Standard Deviation: " + str(df.iloc[:, col].std()))
 
     return [df.iloc[:, col].mean(), df.iloc[:, col].median(), df.iloc[:, col].std()]
